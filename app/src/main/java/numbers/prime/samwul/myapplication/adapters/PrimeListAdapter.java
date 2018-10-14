@@ -43,7 +43,8 @@ public class PrimeListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         int[] items = data.get(position);
         TextView textView = new TextView(mContext);
-        textView.setText(joinNumbers(items));
+        if(position == 0) textView.setText("   " + joinNumbers(items));
+        else textView.setText(joinNumbers(items));
         textView.setTextColor(mContext.getResources().getColor(R.color.textblack));
         textView.setMaxLines(1);
 
